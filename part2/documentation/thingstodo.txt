@@ -1,0 +1,18 @@
+detecting:
+	creating bookmark folder -r
+	adding of bookmark	-r
+	dleting of cookies -v
+	deleting downloads-v
+	scrolling speed-r
+	font change -r
+	deleting history -v
+	can they use keyboard shrtcuts to do stuff -v
+	manual input(smriti) -r 
+	input.ime
+	privacy settings -r
+	removing top sites -v
+	change wallpaper -v
+	window changes -r
+	remove signed in device -v
+	
+	
