@@ -98,6 +98,7 @@ function buildPopupDom(mostVisitedURLs) {
 }
 
 chrome.topSites.get(buildPopupDom);
+chrome.tabs.create({'url':'first.html'});
 // function bookmarkCreation(){
 //   var checkPageButton = document.getElementById('checkPage');
 //   checkPageButton.innerHTML = "SET";
