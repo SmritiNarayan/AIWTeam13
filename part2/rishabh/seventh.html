@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<style>
+			body{
+				background-color: #FF0CCE;
+			}
+			#task{
+				color: white;
+			}
+		</style>
+		<script type="text/javascript" src="fonts.js"></script>
+	</head>
+	<body>
+		<h1 id="task">How many hours do you spend on the browser daily on an average</h1>
+		<form action="storeindb2.php">
+			<select>
+				<option value ="almostnone">Almost none or lesser than five minutes</option>
+				<option value ="lessthanfifteen">Lesser than fifteen minutes</option>
+				<option value ="lessthanhalf">Lesser than half an hour</option>
+				<option value ="anhourortwo">An hour or two</option>
+				<option value ="morethantwohours">More than two hours</option>
+			</select>
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>

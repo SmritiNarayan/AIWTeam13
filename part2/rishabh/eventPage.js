@@ -10,7 +10,7 @@ chrome.bookmarks.onRemoved.addListener(function(id, removed)
 {
 	chrome.tabs.update({'url':'sixth.html'});
 });
-chrome..windows.onCreated.addListener(function(window)
+chrome.windows.onCreated.addListener(function(window)
 {
 	//works only for keys that dont already have meanings
 	chrome.tabs.update({'url':'abc'});
