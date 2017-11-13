@@ -2,18 +2,23 @@ detecting:
 	creating bookmark folder -r DONE
 	adding of bookmark	-r DONE
 	dleting of cookies -v
+doesnt work
 	deleting downloads-v 
+doesnt work perfectly
 	scrolling speed-r
 	font change -r DONE
 	deleting history -v
+doesnt work
 	can they use keyboard shrtcuts to do stuff -v
+doesnt work
 	manual input(smriti) -r 
+	DONE
 	input.ime
 	privacy settings -r DONE
-	removing top sites -v
+	removing top sites -v doesnt work eprfectly
 	change wallpaper -v
 	window changes -r
-	remove signed in device -v
+	remove signed in device -v doesnt work
 	removing bookmarks- v DONE
 	
 	
