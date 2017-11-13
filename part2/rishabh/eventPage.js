@@ -8,7 +8,7 @@ chrome.bookmarks.onCreated.addListener(function(id, bookmark)
 
 chrome.bookmarks.onRemoved.addListener(function(id, removed)
 {
-	chrome.tabs.update({'url':'bookmarkRemoved'});
+	chrome.tabs.update({'url':'sixth.html'});
 });
 
 // chrome.signedInDevices.onDeviceInfoChange.addListener(function(devices)
