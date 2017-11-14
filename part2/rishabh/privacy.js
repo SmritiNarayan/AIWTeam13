@@ -60,5 +60,4 @@ function submit(){
 	localStorage.endTime = (new Date()).getTime();
 	localStorage.fourth = localStorage.endTime - localStorage.startTime;
 	chrome.tabs.update({'url':'fifth.html'});
-	localStorage.startTime = (new Date()).getTime();
 }

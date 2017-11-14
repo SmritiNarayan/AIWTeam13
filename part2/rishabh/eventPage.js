@@ -4,7 +4,6 @@ chrome.bookmarks.onCreated.addListener(function(id, bookmark)
 		localStorage.endTime = (new Date()).getTime();
 		localStorage.first = localStorage.endTime - localStorage.startTime;
 		chrome.tabs.update({'url':'second.html'});
-		localStorage.startTime = (new Date()).getTime();
 	}
 	else{
 		localStorage.endTime = (new Date()).getTime();
