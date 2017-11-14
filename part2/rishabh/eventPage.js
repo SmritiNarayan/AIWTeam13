@@ -19,10 +19,10 @@ chrome.windows.onCreated.addListener(function(window)
 // {
 // 	chrome.tabs.update({'url':'deviceChange'});
 // });
-chrome.downloads.onChanged.addListener(function(id)
-{
-	chrome.tabs.update({'url':'downloadRemoved'});
-});
+// chrome.downloads.onChanged.addListener(function(id)
+// {
+// 	chrome.tabs.update({'url':'downloadRemoved'});
+// });
 chrome.commands.onCommand.addListener(function(commandName)
 {
 	//works only for keys that dont already have meanings
