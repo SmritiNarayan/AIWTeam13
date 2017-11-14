@@ -12,6 +12,6 @@ function store(){
 	localStorage.usage = x.options[x.selectedIndex].text;
 	localStorage.endTime = (new Date()).getTime();
 	localStorage.seventh = localStorage.endTime - localStorage.startTime;
-	chrome.tabs.update({'url':'times.html'});
+	chrome.tabs.update({'url':'eighth.html'});
 	//console.log("weird")
 }

@@ -9,6 +9,7 @@ function init(){
 	createItem(localStorage.fifth);
 	createItem(localStorage.sixth);
 	createItem(localStorage.seventh);
+	createItem(localStorage.eighth);
 	createItem("Score: "+localStorage.score);
 	createItem("Help: "+localStorage.help);
 	createItem("Purpose: "+localStorage.purpose);
