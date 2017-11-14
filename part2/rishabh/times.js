@@ -15,6 +15,17 @@ function init(){
 	createItem("Purpose: "+localStorage.purpose);
 	createItem("Usage: "+localStorage.usage);
 	document.body.appendChild(list);
+	chrome.storage.local.get(function(items){
+		// createItem(JSON.stringify(localStorage.bleh));
+		oldList = items.data;
+		newList = [localStorage.first, localStorage.second, localStorage.third, localStorage.fourth, localStorage.fifth, localStorage.sixth, localStorage.seventh, localStorage.eighth, localStorage.score, localStorage.help, localStorage.purpose, localStorage.usage]
+		oldList.push(newList);
+		chrome.storage.local.set({'data': oldList});
+		for(i in oldList){
+			createItem(oldList[i]);
+		}
+		// createItem(oldList.data);
+	});
 }
 
 function createItem(item){

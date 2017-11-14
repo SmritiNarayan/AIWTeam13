@@ -28,7 +28,8 @@
    "cookies",
    "downloads",
    "fontSettings",
-   "privacy"
+   "privacy",
+   "storage"
    ],
    
   "background":{
