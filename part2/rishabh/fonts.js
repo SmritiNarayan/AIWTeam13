@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', init);
 
 function init(){
+	localStorage.startTime = (new Date()).getTime();
 	var button = document.getElementById("button");
 	var here = document.getElementById("here");
 	var hidden = document.getElementById("hidden");
@@ -19,10 +20,13 @@ function reveal(){
 	hidden.style.display = 'block';
 	// user may not be an expert!!
 	// update in db
+	localStorage.help = parseInt(localStorage.help) + 1;
 }
 
 function submit(){
 	chrome.fontSettings.onDefaultFontSizeChanged.removeListener(callback);
 	//update in db
+	localStorage.endTime = (new Date()).getTime();
+	localStorage.third = localStorage.endTime - localStorage.startTime;
 	chrome.tabs.update({'url':'fourth.html'});
 }
