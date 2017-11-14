@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', init);
 function init(){
 	x=document.getElementById("myButton");
 	x.onclick=store;
-	console.log(document.getElementById("formm"));
-	document.getElementById("formm").appendChild(x);
 }
 
 function store(){
