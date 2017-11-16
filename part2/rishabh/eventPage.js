@@ -12,11 +12,11 @@ chrome.bookmarks.onCreated.addListener(function(id, bookmark)
 	}
 });
 
-chrome.windows.onCreated.addListener(function(window)
-{
-	//works only for keys that dont already have meanings
-	chrome.tabs.update({'url':'abc'});
-});
+// chrome.windows.onCreated.addListener(function(window)
+// {
+// 	//works only for keys that dont already have meanings
+// 	chrome.tabs.update({'url':'abc'});
+// });
 
 chrome.bookmarks.onRemoved.addListener(function(id, removed)
 {
