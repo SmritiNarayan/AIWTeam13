@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', init);
-
+fontChange=false;
 function init(){
 	localStorage.startTime = (new Date()).getTime();
 	var button = document.getElementById("button");
@@ -8,11 +8,13 @@ function init(){
 	hidden.style.display = 'none';
 	button.onclick = submit;
 	here.onclick = reveal;
+	fontChange=false;
 	chrome.fontSettings.onDefaultFontSizeChanged.addListener(callback);
 }
 
 function callback(details){
 	fontSize = details.pixelSize;
+	fontChange = true;
 	button.value = fontSize;
 }
 
@@ -27,6 +29,9 @@ function submit(){
 	chrome.fontSettings.onDefaultFontSizeChanged.removeListener(callback);
 	//update in db
 	localStorage.endTime = (new Date()).getTime();
-	localStorage.third = localStorage.endTime - localStorage.startTime;
+	if(fontChange == true)
+		localStorage.third = localStorage.endTime - localStorage.startTime;
+	else
+		localStorage.third=-1;
 	chrome.tabs.update({'url':'fourth.html'});
 }

@@ -58,6 +58,9 @@ function reveal(){
 function submit(){
 	//update score in db
 	localStorage.endTime = (new Date()).getTime();
-	localStorage.fourth = localStorage.endTime - localStorage.startTime;
+	if(localStorage.score>0)
+		localStorage.fourth = localStorage.endTime - localStorage.startTime;
+	else
+		localStorage.fourth = -1
 	chrome.tabs.update({'url':'fifth.html'});
 }

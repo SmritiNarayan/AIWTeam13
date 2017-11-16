@@ -10,18 +10,16 @@ function init(){
 	createItem(localStorage.third);
 	createItem(localStorage.fourth);
 	createItem(localStorage.fifth);
-	createItem(localStorage.sixth);
-	createItem(localStorage.seventh);
+	createItem("Purpose: "+localStorage.purpose);
+	createItem("Usage: "+localStorage.usage);
 	createItem(localStorage.eighth);
 	createItem("Score: "+localStorage.score);
 	createItem("Help: "+localStorage.help);
-	createItem("Purpose: "+localStorage.purpose);
-	createItem("Usage: "+localStorage.usage);
 	document.body.appendChild(list);
 	chrome.storage.local.get(function(items){
 		// createItem(JSON.stringify(localStorage.bleh));
 		oldList = items.data;
-		newList = [localStorage.first, localStorage.second, localStorage.third, localStorage.fourth, localStorage.fifth, localStorage.sixth, localStorage.seventh, localStorage.eighth, localStorage.score, localStorage.help, localStorage.purpose, localStorage.usage]
+		newList = [localStorage.first, localStorage.second, localStorage.third, localStorage.fourth, localStorage.fifth, localStorage.purpose, localStorage.usage, localStorage.eighth, localStorage.score, localStorage.help]
 		if(!oldList)
 			oldList = []
 		oldList.push(newList);
@@ -42,7 +40,7 @@ function createItem(item){
 function download(){
 	chrome.storage.local.get(function(items){
 		data = items.data
-		str="Num,First,Second,Third,Fourth,Fifth,Sixth,Seventh,Eighth,Score,Help,Purpose,Usage\n";
+		str="Num,First,Second,Third,Fourth,Fifth,Purpose,Usage,Eighth,Score,Help\n";
 		for(i in data){
 			str = str+i+","+data[i]+"\n";
 		}
