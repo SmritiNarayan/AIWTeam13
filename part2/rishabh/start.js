@@ -8,5 +8,7 @@ function init(){
 
 function storeInDb(){
 	//store in Db that he skipped or a negative time
-        chrome.tabs.update({'url':'first.html'});
+	n = document.getElementById('name');
+	localStorage.name = n.value;
+    chrome.tabs.update({'url':'first.html'});
 }

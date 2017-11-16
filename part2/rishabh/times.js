@@ -5,6 +5,7 @@ function init(){
 	button.onclick = download;
 
 	list = document.createElement('ol');
+	createItem(localStorage.name);
 	createItem(localStorage.first);
 	createItem(localStorage.second);
 	createItem(localStorage.third);
@@ -19,7 +20,7 @@ function init(){
 	chrome.storage.local.get(function(items){
 		// createItem(JSON.stringify(localStorage.bleh));
 		oldList = items.data;
-		newList = [localStorage.first, localStorage.second, localStorage.third, localStorage.fourth, localStorage.fifth, localStorage.purpose, localStorage.usage, localStorage.eighth, localStorage.score, localStorage.help]
+		newList = [localStorage.name, localStorage.first, localStorage.second, localStorage.third, localStorage.fourth, localStorage.fifth, localStorage.purpose, localStorage.usage, localStorage.eighth, localStorage.score, localStorage.help]
 		if(!oldList)
 			oldList = []
 		oldList.push(newList);
@@ -40,9 +41,9 @@ function createItem(item){
 function download(){
 	chrome.storage.local.get(function(items){
 		data = items.data
-		str="Num,First,Second,Third,Fourth,Fifth,Purpose,Usage,Eighth,Score,Help\n";
+		str="Name,First,Second,Third,Fourth,Fifth,Purpose,Usage,Eighth,Score,Help\n";
 		for(i in data){
-			str = str+i+","+data[i]+"\n";
+			str = str+data[i]+"\n";
 		}
 		createItem(str);
 		file = new Blob([str], {type: 'text/plain'});
