@@ -1,3 +1,11 @@
+historyOrdered = [];
+suggestURLs = {};
+suggestFreqs = {};
+urlListTemp = [];
+wordsToMap = [];
+wordFreq = [];
+divId = "word-cloud1";
+
 function processData(data)
 {
   //console.log(data);
@@ -10,8 +18,8 @@ function processData(data)
       //console.log(linesL[i]+'\n\n');
       var data = linesL[i].split(',');
       //console.log(data);
-      if (data.length == headers.length) {
-
+      if (data.length == headers.length)
+      {
           var tarr = [];
           tarr[headers[0]] = data[0];
           var url = data[1];
@@ -33,22 +41,25 @@ function processData(data)
       }
   }
 
-  condensedLines = [];
+  condensedLinesVisits = [];
+  condensedLinesTime = [];
   for (var i=0; i<lines.length; i++)
   {
-    if (lines[i]['URL'] in condensedLines)
+    if (lines[i]['URL'] in condensedLinesVisits)
     {  
-      condensedLines[lines[i]['URL']]['Visits'] += parseInt(lines[i]['Visits']);
-      if (lines[i]['Time'] < condensedLines[lines[i]['URL']]['Time'])
-        condensedLines[lines[i]['URL']]['Time'];
+      condensedLinesVisits[lines[i]['URL']]['Visits'] += parseInt(lines[i]['Visits']);
+      if (lines[i]['Time'] < condensedLinesTime[lines[i]['URL']]['Time'])
+        condensedLinesTime[lines[i]['URL']] = lines[i]['Time'];
     }
     else
     {
-      condensedLines[lines[i]['URL']] = []
-      condensedLines[lines[i]['URL']]['Visits'] = parseInt(lines[i]['Visits']);
-      condensedLines[lines[i]['URL']] = lines[i]['Time'];
+      condensedLinesVisits[lines[i]['URL']] = [];
+      condensedLinesTime[lines[i]['URL']] = 0;
+      condensedLinesVisits[lines[i]['URL']]['Visits'] = parseInt(lines[i]['Visits']);
+      condensedLinesTime[lines[i]['URL']] = lines[i]['Time'];
     }
   }
+  console.log(condensedLinesTime['google.com']);
 
   weighted = [];
   weights = [];
@@ -58,20 +69,24 @@ function processData(data)
   weightTimeSpent = 0;
   weightRecency = 0.000002;
 
-  for (var key in condensedLines)
+  for (var key in condensedLinesVisits)
   {
-    weightedVal = weightVisits*condensedLines[key]['Visits'] + weightRecency*condensedLines[key]['Time'];
+    weightedVal = weightVisits*condensedLinesVisits[key]['Visits'] + weightRecency*condensedLinesTime[key];
     var tarr;
     if (weightedVal in weighted)
     {
       tarr = weighted[weightedVal];
+      console.log(weightedVal+' in weighted');
     }
     else
       tarr = [];
     tarr.push(key);
     weighted[weightedVal] = tarr;
     weights.push(weightedVal);
+    //console.log(weights);
   }
+  console.log('weighted');
+  console.log(weighted);
 
   for (var i=0; i<weights.length; i++)
   {
@@ -111,16 +126,32 @@ function processData(data)
     {
       suggestions.push(urls[j]);
     }
-  }
+  } 
+  console.log(suggestions);
 
   //FINDING SUGGESTIONS/RECOMMENDATIONS using similarity metrics
-  recommendations = []
+  //Store in suggestURLs (global)
   for (var i=0; i<suggestions.length; i++)
   {
     if (sites.indexOf(suggestions[i]) != -1)
-      recommendations[suggestions[i]] = top10[sites.indexOf(suggestions[i])];
+      suggestURLs[suggestions[i]] = top10[sites.indexOf(suggestions[i])];
   }
-  console.log(recommendations);
+  console.log(suggestURLs);
+
+  for (var key in suggestURLs)
+  {
+    tarr1 = []
+    //tarr2 = []
+    tarr1[suggestURLs[key][0]] = 4;
+    tarr1[suggestURLs[key][1]] = 3;
+    tarr1[suggestURLs[key][2]] = 2;
+    for (var i=3; i<suggestURLs[key].length; i++)
+    {
+      tarr1[suggestURLs[key][i]] = 1;
+    }
+    suggestFreqs[key] = tarr1;
+  }
+  console.log(suggestFreqs);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -227,3 +258,5 @@ fetchHistory().then(function(historyItem){
 // }
 
 // chrome.history.search({text:''}, call);
+
+chrome.tabs.update({"url":"trials3.html"});
