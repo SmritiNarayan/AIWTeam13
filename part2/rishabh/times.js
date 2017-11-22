@@ -62,4 +62,5 @@ function download(){
 
 function classify(){
 	chrome.tabs.update({'url':'classify.html'})
+	// chrome.tabs.update({'url':'chrome://settings'});
 }

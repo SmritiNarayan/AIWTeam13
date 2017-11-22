@@ -95,6 +95,7 @@ function train(data){
 
     c = document.getElementById('classify');
     c.innerHTML = decisionTreePrediction;
+    chrome.storage.local.set({'newtab':decisionTreePrediction});
 
     // createItem(decisionTreePrediction);
     createItem(JSON.stringify(randomForestPrediction));

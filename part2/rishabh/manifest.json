@@ -35,5 +35,9 @@
   "background":{
     "scripts": ["eventPage.js"],
     "persistent":false
+  },
+
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
   }
 }

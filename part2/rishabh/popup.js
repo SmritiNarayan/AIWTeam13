@@ -98,7 +98,25 @@ function buildPopupDom(mostVisitedURLs) {
 }
 
 chrome.topSites.get(buildPopupDom);
-chrome.tabs.create({'url':'zeroeth.html'});
+
+chrome.storage.local.get(function(items){
+    newtab = items.newtab;
+    if(!newtab){
+        chrome.tabs.create({'url':'zeroeth.html'});
+    }
+    else{
+        if(newtab == 'Beginner'){
+            chrome.tabs.create({'url':'beginner.html'});
+        }
+        else if(newtab == 'Intermediate'){
+            chrome.tabs.create({'url':'itermediate.html'});
+        }
+        else if(newtab == 'Expert'){
+            chrome.tabs.create({'url':'expert.html'});
+        }
+    }
+});
+
 // function bookmarkCreation(){
 //   var checkPageButton = document.getElementById('checkPage');
 //   checkPageButton.innerHTML = "SET";
