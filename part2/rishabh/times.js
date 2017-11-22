@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', init);
 function init(){
 	button = document.getElementById("download");
 	button.onclick = download;
+	button = document.getElementById("classify");
+	button.onclick = classify;
 
 	list = document.createElement('ol');
 	createItem(localStorage.name);
@@ -21,6 +23,7 @@ function init(){
 		// createItem(JSON.stringify(localStorage.bleh));
 		oldList = items.data;
 		newList = [localStorage.name, localStorage.first, localStorage.second, localStorage.third, localStorage.fourth, localStorage.fifth, localStorage.purpose, localStorage.usage, localStorage.eighth, localStorage.score, localStorage.help]
+		localStorage.test = newList;
 		if(!oldList)
 			oldList = []
 		oldList.push(newList);
@@ -55,4 +58,8 @@ function download(){
 	    a.click();
 	    chrome.storage.local.clear();
 	});
+}
+
+function classify(){
+	chrome.tabs.update({'url':'classify.html'})
 }
