@@ -34,33 +34,13 @@
    
 }
 
-.sidenav {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
 
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
 .sidenav1 {
     height: 100%;
-    width: 5%;
+    width: 15%;
     position: fixed;
     z-index: 1000000;
     top: 75px;
-    
     background-color: #111;
     overflow-x: hidden;
     position: fixed;
@@ -69,16 +49,20 @@
 }
 
 .sidenav1 {
-    padding: 8px 8px 8px 32px;
+	text-align: center;
+    
+    padding-top: 50px;
+    padding-bottom: 8px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f1f1f1;
     display: block;
     transition: 0.3s;
 }
 
 .sidenav1 a:hover {
-    color: #f1f1f1;
+    color: #818181;
 }
 
 .sidenav1 .closebtn {
@@ -126,26 +110,24 @@
 			</div>
 		</div>
 	</div>
-<div id="mySidenav" class="sidenav">
-  <a href="#">About</a>
-</div>
+
 <div id="mySidenav" class="sidenav1">
 
-  <a href="#" id="settings" data-balloon-length="large" data-balloon="You can improve your browsing experience by appropriately changing the settings to adhere to your needs. Most of these settings are turned on by default, but you can choose which you'd like on or of" data-balloon-pos="top">Settings</a><br>
+  <a href="#" id="settings" data-balloon-length="fit" data-balloon="You can improve your browsing experience by appropriately changing the settings to adhere to your needs. Most of these settings are turned on by default, but you can choose which you'd like on or of" data-balloon-pos="down">Settings</a><br><br><br><br>
 
-  <a href="#" id="bookmarks" data-balloon-length="large" data-balloon="a bookmark or electronic bookmark is a method of saving a web page's address. You can bookmark a page by clicking the star on the toolbar. These bookmarks (pages that you want to remember) can be viewed by clicking here" data-balloon-pos="top">Bookmarks</a><br>
+  <a href="#" id="bookmarks" data-balloon-length="fit" data-balloon="a bookmark or electronic bookmark is a method of saving a web page's address. You can bookmark a page by clicking the star on the toolbar. These bookmarks (pages that you want to remember) can be viewed by clicking here" data-balloon-pos="down">Bookmarks</a><br><br><br><br>
 
-  <a href="#" id="history" data-balloon-length="large" data-balloon=" The History feature keeps tabs on your Internet browsing for as long as you're online.The history feature on our browsers is there to make our online experience simpler and to provide convenience. For privacy reasons, you can clear your browsing history when you visit this link" data-balloon-pos="top">History</a><br>
+  <a href="#" id="history" data-balloon-length="fit" data-balloon=" The History feature keeps tabs on your Internet browsing for as long as you're online.The history feature on our browsers is there to make our online experience simpler and to provide convenience. For privacy reasons, you can clear your browsing history when you visit this link" data-balloon-pos="down">History</a><br><br><br><br>
 
-  <a href="#" id="downloads" data-balloon-length="large" data-balloon="This will open up the browser’s native Download Manager page where you can see all your past downloads. Pretty fast way to navigate through all the files that you downloaded recently. It can also be used to check the progress of a download that is currently going on." data-balloon-pos="top">Downloads</a><br>
+  <a href="#" id="downloads" data-balloon-length="fit" data-balloon="This will open up the browser’s native Download Manager page where you can see all your past downloads. Pretty fast way to navigate through all the files that you downloaded recently. It can also be used to check the progress of a download that is currently going on." data-balloon-pos="down">Downloads</a><br><br><br><br>
 
-  <a href="#" id="newtab" data-balloon-length="large" data-balloon="Well, who’d know that you can open a new tab by hitting this button! This feature is for users who do want to view multiple sites, but don't want to have multiple browser windows open.  " data-balloon-pos="top">New Tab</a><br>
+  <a href="#" id="newtab" data-balloon-length="fit" data-balloon="Well, who’d know that you can open a new tab by hitting this button! This feature is for users who do want to view multiple sites, but don't want to have multiple browser windows open.  " data-balloon-pos="down">New Tab</a><br><br><br><br>
 
-  <a href="#" id="version" data-balloon-length="large" data-balloon="A place for you to learn more about the Chrome browser and its features and properties" data-balloon-pos="top">Chrome Info</a><br>
+  <a href="#" id="version" data-balloon-length="fit" data-balloon="A place for you to learn more about the Chrome browser and its features and properties" data-balloon-pos="down">Chrome Info</a><br><br><br>
 </div>
 
 	<!-- Header area -->
-	<div id="header-wrapper" class="header-slider">
+	<div id="header-wrapper" class="header-slider" style="padding-left: 13%">
 		<header class="clearfix" id="search">
 			<div class="field your-name form-group" style="text-align: center;padding: 150px">
 				<form id="ff" action="https://www.google.co.in/search?q=smriti"><input type="text" name="name" class="form-control" id="name" placeholder="Search www.google.com" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -163,7 +145,7 @@
 	</div>
 
 	<!-- section: works -->
-	<section id="tabs" class="section">
+	<section id="tabs" class="section" style="padding-left: 16%">
 	
 		<div class="container clearfix">
 			<h4>YOUR FAVOURITES</h4>
@@ -226,12 +208,12 @@
 		</div>
 	</section>
 	<!-- spacer section -->
-	<section class="spacer bg3" id="suggestions">
+	<section class="spacer bg3" id="suggestions" style="padding-left: 8.5%">
 		<div class="container" style="height: 500px">
 			<div class="row" style="height: 500px">
 				<div class="span12 aligncenter flyBottom" style="height:230px">
 				<div class="aligncenter flyBottom" style="background-color: black;height: 60px;width: 100%;"><h2 style="color:white;font-size: 20px;text-align: center;"><br>YOU MAY ALSO LIKE<br><h2></div>
-					<iframe src="trials2.html" style="z-index: 10000000000000000;background-color: white;width:90%;height: 200%"></iframe>
+					<iframe src="trials3.html" style="z-index: 10000000000000000;background-color: white;width:90%;height: 200%"></iframe>
 				</div>
 			</div>
 		</div>
