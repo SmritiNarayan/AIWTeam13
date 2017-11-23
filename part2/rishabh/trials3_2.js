@@ -185,7 +185,7 @@ function processData(data)
       //console.log(data);
       if (data.length == headers.length)
       {
-          var tarr = [];
+          var tarr = {};
           tarr[headers[0]] = data[0];
           var url = data[1];
           if (url.indexOf('https://')==0)
@@ -208,12 +208,13 @@ function processData(data)
 
   condensedLinesVisits = [];
   condensedLinesTime = [];
+  console.log(lines);
   for (var i=0; i<lines.length; i++)
   {
     if (lines[i]['URL'] in condensedLinesVisits)
     {  
       condensedLinesVisits[lines[i]['URL']]['Visits'] += parseInt(lines[i]['Visits']);
-      if (lines[i]['Time'] < condensedLinesTime[lines[i]['URL']]['Time'])
+      if (lines[i]['Time'] < condensedLinesTime[lines[i]['URL']])//['Time'])
         condensedLinesTime[lines[i]['URL']] = lines[i]['Time'];
     }
     else
@@ -338,6 +339,7 @@ function processData(data)
     }
   }
   runWordCloud(allWordMapUrls, suggestFreqs);
+  chrome.storage.local.set({'topsite':allWordMapUrls});
 }
 
 $(document).ready(function() {
